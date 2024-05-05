@@ -66,6 +66,20 @@ def event():
     difki = response.json()
     return render_template('event.html', data=difki)
 
+@app.route('/racelist')
+def event():
+
+    url = "https://f1-race-schedule.p.rapidapi.com/api"
+
+    headers = {
+        "X-RapidAPI-Key": "eea92a9621mshbb5f39383ef16f2p147c78jsn3b2a2ac99577",
+        "X-RapidAPI-Host": "f1-race-schedule.p.rapidapi.com"
+}
+
+    response = requests.get(url, headers=headers)
+    naufal = response.json()
+    return render_template('racelist.html', data=naufal)
+
 
 
 if __name__ == '__main__':
