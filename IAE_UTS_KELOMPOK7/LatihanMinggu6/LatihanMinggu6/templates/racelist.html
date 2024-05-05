@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>KLASMEN LIGA INGGRIS</title>
+    <style>
+        body {
+            background-color: #f0f3f5; /* Warna latar belakang */
+            color: #000000; /* Warna teks */
+        }
+        .navbar {
+            background-color: #2980b9; /* Warna navbar */
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .table thead th {
+            background-color: #1abc9c; /* Warna header tabel */
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .table tbody th {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">HOME</a>
+            <h2 class="text-center text-white">F1 NEWS</h2>
+        </div>
+    </nav>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Track</th>
+                    <th scope="col">Date</th>                  
+                </tr>
+            </thead>
+            <tbody>
+              {% for _id in data %}
+                <tr>
+                    <td>{{ _id.race_no }}</td>
+                    <td>{{ _id.track }}</td>
+                    <td>{{ _id.date }}</td>`
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
