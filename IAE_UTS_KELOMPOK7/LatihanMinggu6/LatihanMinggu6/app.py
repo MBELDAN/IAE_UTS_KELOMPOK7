@@ -16,9 +16,6 @@ def premier():
         "X-RapidAPI-Host": "premier-league-standings1.p.rapidapi.com"
     }
 
-
-
-
     response = requests.get(url, headers=headers)
     arkan = response.json()
     return render_template('premier.html', data=arkan)
@@ -37,22 +34,6 @@ def playerinfo():
     beldan = response.json()
     return render_template('playerinf.html', data=beldan)
 
-
-
-
-@app.route('/transferlist')
-def transfer():
-    url = "https://sportapi7.p.rapidapi.com/api/v1/transfer"
-
-    headers = {
-        "X-RapidAPI-Key": "eea92a9621mshbb5f39383ef16f2p147c78jsn3b2a2ac99577",
-        "X-RapidAPI-Host": "sportapi7.p.rapidapi.com"
-}
-
-    response = requests.get(url, headers=headers)
-    naufal = response.json()
-    return render_template('transfer.html', data=naufal)
-
 @app.route('/event')
 def event():
     url = "https://f1-motorsport-data.p.rapidapi.com/news"
@@ -67,19 +48,17 @@ def event():
     return render_template('event.html', data=difki)
 
 @app.route('/racelist')
-def event():
-
+def racelist():
     url = "https://f1-race-schedule.p.rapidapi.com/api"
 
     headers = {
         "X-RapidAPI-Key": "eea92a9621mshbb5f39383ef16f2p147c78jsn3b2a2ac99577",
         "X-RapidAPI-Host": "f1-race-schedule.p.rapidapi.com"
-}
+    }
 
     response = requests.get(url, headers=headers)
     naufal = response.json()
     return render_template('racelist.html', data=naufal)
-
 
 
 if __name__ == '__main__':
